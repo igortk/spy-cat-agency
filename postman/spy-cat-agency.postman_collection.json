@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "f232107a-e080-48f4-85f6-66986af51737",
+		"name": "spy-cat-agency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Spy Cats API",
+			"item": [
+				{
+					"name": "Create a Spy Cat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Kuziy Bond\",\r\n  \"yearsOfExperience\": 7,\r\n  \"breed\": \"Siamese\",\r\n  \"salary\": 1700.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cats",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all Spy Cats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cats",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Single Spy Cat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cats/c4de0a61-a5c1-4742-bfb2-2e2d9620aeca",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cats",
+								"c4de0a61-a5c1-4742-bfb2-2e2d9620aeca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Spy Cat's Salary",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"salary\": 1600.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cats/c4de0a61-a5c1-4742-bfb2-2e2d9620aeca/salary",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cats",
+								"c4de0a61-a5c1-4742-bfb2-2e2d9620aeca",
+								"salary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove a Spy Cat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cats/c4de0a61-a5c1-4742-bfb2-2e2d9620aeca",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cats",
+								"c4de0a61-a5c1-4742-bfb2-2e2d9620aeca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Missions/Targets API",
+			"item": [
+				{
+					"name": "Create a Mission with Targets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"catId\": \"c9e7b235-9c88-466d-a11c-c721952f4949\",\r\n  \"targets\": [\r\n    {\r\n      \"name\": \"Goldfinger\",\r\n      \"country\": \"Switzerland\"\r\n    },\r\n    {\r\n      \"name\": \"Dr. No\",\r\n      \"country\": \"Jamaica\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/missions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all Missions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/missions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Single Mission",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign a Cat to a Mission",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"catId\": \"2c67b2d5-e654-4a47-a87f-d51e7f6e2f18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a/assign-cat",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+								"assign-cat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Target to an Existing Mission",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Oddjob\",\r\n  \"country\": \"Japan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a/targets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+								"targets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Target Notes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"note\": \"Initial surveillance report.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a/targets/7a9c3d4f-1e8b-4b2d-9c3f-4e67d2e0b5f1/notes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+								"targets",
+								"7a9c3d4f-1e8b-4b2d-9c3f-4e67d2e0b5f1",
+								"notes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark a Target as Completed",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a/targets/7a9c3d4f-1e8b-4b2d-9c3f-4e67d2e0b5f1/complete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+								"targets",
+								"7a9c3d4f-1e8b-4b2d-9c3f-4e67d2e0b5f1",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark a Mission as Completed",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a/complete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Target from a Mission",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a/targets/7a9c3d4f-1e8b-4b2d-9c3f-4e67d2e0b5f1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+								"targets",
+								"7a9c3d4f-1e8b-4b2d-9c3f-4e67d2e0b5f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Mission",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/missions/a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"missions",
+								"a6f0d7e8-e5a1-4b13-a4f6-82d23c14d59a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
