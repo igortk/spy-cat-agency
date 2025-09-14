@@ -1,7 +1,9 @@
 # Spy Cat Agency
-The Postman collection with all the requests for this API is located in the `postman` folder.
 
-## 🚀 Running the service:
+## 📡 Postman
+‼️The Postman collection with all the requests for this API is located in the `postman` folder. The IDs for cats, missions, and targets are generated in UUID format. After creating a cat, mission, or target, copy and use their UUIDs in the other API requests for testing purposes.
+
+## 🚀 Running the service
 
 ### 1️⃣ Clone the repository.
 ```sh
