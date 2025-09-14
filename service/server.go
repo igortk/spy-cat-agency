@@ -17,26 +17,27 @@ func Run(httpCfg *config.HttpConfig) {
 
 	api := router.Group("/api")
 	{
-		api.POST("/cats", handlers.CreateCat)
-		api.GET("/cats", handlers.GetCats)
-		api.GET("/cats/:id", handlers.GetCat)
-		api.PUT("/cats/:id/salary", handlers.UpdateCatSalary)
-		api.DELETE("/cats/:id", handlers.DeleteCat)
+		api.POST("/cats", handlers.CreateCat)                 //Ability to create a spy cat in the system
+		api.GET("/cats", handlers.GetCats)                    //Ability to list spy cats
+		api.GET("/cats/:id", handlers.GetCat)                 //Ability to get a single spy cat
+		api.PUT("/cats/:id/salary", handlers.UpdateCatSalary) //Ability to update spy cats’ information (Salary)
+		api.DELETE("/cats/:id", handlers.DeleteCat)           //Ability to remove spy cats from the system
 
-		api.POST("/missions", handlers.CreateMission)
-		api.GET("/missions", handlers.GetMissions)
+		api.POST("/missions", handlers.CreateMission) //Ability to create a mission in the system along with targets
+		api.GET("/missions", handlers.GetMissions)    //Ability to list missions
 
 		missionGroup := api.Group("/missions/:id")
 		{
-			missionGroup.GET("", handlers.GetMission)
-			missionGroup.PUT("/complete", handlers.CompleteMission)
-			missionGroup.POST("/assign-cat", handlers.AssignCat)
-			missionGroup.DELETE("", handlers.DeleteMission)
+			missionGroup.GET("", handlers.GetMission)               //Ability to get a single mission
+			missionGroup.PUT("/complete", handlers.CompleteMission) //Ability to update mission
+			missionGroup.POST("/assign-cat", handlers.AssignCat)    //Ability to assign a cat to a mission
+			missionGroup.DELETE("", handlers.DeleteMission)         //Ability to delete a mission
 
-			missionGroup.POST("/targets", handlers.AddTarget)
-			missionGroup.PUT("/targets/:targetId/notes", handlers.UpdateTargetNotes)
-			missionGroup.PUT("/targets/:targetId/complete", handlers.CompleteTarget)
-			missionGroup.DELETE("/targets/:targetId", handlers.DeleteTarget)
+			missionGroup.POST("/targets", handlers.AddTarget)                //Ability to add targets to an existing mission
+			missionGroup.DELETE("/targets/:targetId", handlers.DeleteTarget) //Ability to delete targets from an existing mission
+			//Ability to update mission targets
+			missionGroup.PUT("/targets/:targetId/notes", handlers.UpdateTargetNotes) //Ability to update Notes
+			missionGroup.PUT("/targets/:targetId/complete", handlers.CompleteTarget) //Ability to mark it as completed
 		}
 	}
 
